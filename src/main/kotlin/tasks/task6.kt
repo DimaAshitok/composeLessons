@@ -31,7 +31,7 @@ class State(
 )
 
 @Composable
-fun task6() {
+fun Task6() {
     val stats: List<State> = listOf(
         State(
             category = "Total Users",

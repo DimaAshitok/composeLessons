@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun task8() {
+fun Task8() {
     var variant by remember { mutableStateOf<String?>(null) }
     val variants = arrayOf("Small", "Medium", "Big")
     var quantity by remember { mutableStateOf<Int>(1) }

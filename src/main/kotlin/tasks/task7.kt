@@ -98,7 +98,7 @@ private fun post(
 }
 
 @Composable
-fun task7() {
+fun Task7() {
     Column(
         modifier = Modifier
             .fillMaxSize()

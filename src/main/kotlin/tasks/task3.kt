@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.foundation.border
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,13 +26,13 @@ import kotlinx.coroutines.delay
 import utils.getFormatedNumber
 
 @Composable
-fun task3() {
+fun Task3() {
     class State(
         val category: String,
         var count: Int
     )
 
-    var stats by remember { mutableStateOf<List<State>>(listOf(
+    val stats = listOf(
         State(
             category = "Posts",
             count = 548
@@ -46,7 +45,7 @@ fun task3() {
             category = "Following",
             count = 221
         ),
-    )) }
+    )
 
     Column(
         modifier = Modifier
@@ -64,12 +63,16 @@ fun task3() {
             Image(
                 painter = painterResource("task3/pfp.png"),
                 contentDescription = "",
-                modifier = Modifier.clip(CircleShape).size(96.dp, 96.dp)
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .size(96.dp, 96.dp)
             )
             Spacer(Modifier.height(16.dp))
             Text(
                 text = AnnotatedString("X_AE_C-921"),
-                modifier = Modifier.height(28.dp).fillMaxWidth(),
+                modifier = Modifier
+                    .height(28.dp)
+                    .fillMaxWidth(),
                 color = Color(30, 41, 59),
                 fontSize = 20.sp,
                 fontFamily = FontFamily(Font("task3/extraBold.ttf", weight = FontWeight.W800)),
@@ -78,7 +81,9 @@ fun task3() {
             Spacer(Modifier.height(4.dp))
             Text(
                 text = AnnotatedString("@xtheobliterator"),
-                modifier = Modifier.height(22.dp).fillMaxWidth(),
+                modifier = Modifier
+                    .height(22.dp)
+                    .fillMaxWidth(),
                 color = Color(30, 41, 59),
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font("task3/medium.ttf", weight = FontWeight.W500)),
@@ -87,7 +92,9 @@ fun task3() {
             Spacer(Modifier.height(4.dp))
             Text(
                 text = AnnotatedString("Osaka, Japan \uD83C\uDF8C "),
-                modifier = Modifier.height(22.dp).fillMaxWidth(),
+                modifier = Modifier
+                    .height(22.dp)
+                    .fillMaxWidth(),
                 color = Color(71, 85, 105),
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font("task3/medium.ttf", weight = FontWeight.W500)),
@@ -123,20 +130,14 @@ fun task3() {
                     )
                 }
                 if (stats.indexOf(yesyes) != stats.lastIndex) {
-                    Spacer(modifier = Modifier
-                        .width(2.dp)
-                        .fillMaxHeight()
-                        .background(color = Color(203, 213, 225))
+                    Spacer(
+                        modifier = Modifier
+                            .width(2.dp)
+                            .fillMaxHeight()
+                            .background(color = Color(203, 213, 225))
                     )
                 }
             }
-        }
-    }
-
-    LaunchedEffect(Unit){
-        while(true){
-            delay(2000)
-            stats[(0..(stats.size - 1)).random()].count += (0..5).random()
         }
     }
 }

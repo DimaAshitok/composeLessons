@@ -33,11 +33,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun task5() {
-    var liked by remember { mutableStateOf<Boolean>(false) }
+fun Task5() {
 
     Column(
-        modifier = Modifier.size(274.dp, 424.dp).padding(top = 21.dp, start = 17.dp, end = 17.dp, bottom = 22.dp)
+        modifier = Modifier
+            .size(274.dp, 424.dp)
+            .padding(top = 21.dp, start = 17.dp, end = 17.dp, bottom = 22.dp)
     ) {
         Box(
             contentAlignment = Alignment.Center,
@@ -53,14 +54,14 @@ fun task5() {
         Text(
             text = AnnotatedString("Carne Louca"),
             modifier = Modifier.size(150.dp, 22.dp),
-            color = Color(156, 75, 0),
+            color = Color(0xFF9c4b00),
             fontFamily = FontFamily(Font("task5/Poppins-SemiBold.ttf", weight = FontWeight.W500)),
             fontSize = 16.sp,
         )
         Text(
             text = AnnotatedString("ITALIANO"),
             modifier = Modifier.size(98.dp, 22.dp),
-            color = Color(153, 153, 153),
+            color = Color(0xFF9c4b00),
             fontSize = 14.sp,
             fontFamily = FontFamily(Font("task5/Poppins-Regular.ttf", weight = FontWeight.W400)),
         )
@@ -72,7 +73,7 @@ fun task5() {
             Text(
                 text = AnnotatedString("Fabiana"),
                 modifier = Modifier.size(75.dp, 22.dp),
-                color = Color(0, 0, 0),
+                color = Color(0xff000000),
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font("task5/Poppins-Medium.ttf", weight = FontWeight.W400)),
             )
@@ -88,7 +89,7 @@ fun task5() {
             Text(
                 text = AnnotatedString("0h50min"),
                 modifier = Modifier.size(86.dp, 22.dp),
-                color = Color(0, 0, 0),
+                color = Color.Black,
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font("task5/Poppins-Regular.ttf", weight = FontWeight.W400)),
             )
@@ -97,7 +98,7 @@ fun task5() {
         Text(
             text = AnnotatedString("“Sua origem é italiana, parente da carne lessa, receita à base...”"),
             modifier = Modifier.size(240.dp, 61.dp),
-            color = Color(165, 165, 165),
+            color = Color(0xffa5a5a5),
             fontSize = 14.sp,
             fontFamily = FontFamily(Font("task5/Poppins-Light.ttf", weight = FontWeight.W400)),
         )
@@ -108,8 +109,8 @@ fun task5() {
             Icon(
                 painter = painterResource("task5/heart.svg"),
                 contentDescription = "relogio",
-                modifier = Modifier.size(23.dp, 22.dp).clickable(onClick = {liked = !liked}),
-                tint = if (liked) Color(255, 122, 0) else Color(104, 104, 104)
+                modifier = Modifier.size(23.dp, 22.dp),
+                tint = Color(0xff686868)
             )
 
             Spacer(modifier = Modifier.weight(1f))
@@ -130,14 +131,14 @@ fun task5() {
                 Box(
                     modifier = Modifier
                         .size(23.26.dp, 23.dp)
-                        .background(Color(253, 253, 253), CircleShape)
+                        .background(Color(0xfdfdfd), CircleShape)
                         .clip(CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = AnnotatedString("+${if (liked) 51 else 50}"),
+                        text = AnnotatedString("+50"),
                         modifier = Modifier.size(240.dp, 61.dp),
-                        color = Color(165, 165, 165),
+                        color = Color(0xffa5a5a5),
                         fontSize = 14.sp,
                         fontFamily = FontFamily(Font("task5/Poppins-Light.ttf", weight = FontWeight.W400)),
                     )
