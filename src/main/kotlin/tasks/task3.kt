@@ -27,10 +27,14 @@ import utils.getFormatedNumber
 
 @Composable
 fun Task3() {
+
+
+
     class State(
         val category: String,
         var count: Int
     )
+
 
     val stats = listOf(
         State(
@@ -46,7 +50,14 @@ fun Task3() {
             count = 221
         ),
     )
-
+var following by remember { mutableStateOf(stats.get(2).count)}
+    
+    LaunchedEffect (Unit){
+        while (true){
+            delay(1)
+            following++
+        }
+    }
     Column(
         modifier = Modifier
             .size(370.dp, 350.dp)

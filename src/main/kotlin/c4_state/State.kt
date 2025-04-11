@@ -1,4 +1,4 @@
-package c4_state
+ package c4_state
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
  */
 
 @Composable
-fun CounterExample() {
+fun CounterExample() {4
     // Создаём состояние счётчика, которое сохраняется между рекомпозициями
     var count by remember { mutableStateOf(0) }
 
